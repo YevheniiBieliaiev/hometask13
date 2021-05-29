@@ -1,0 +1,70 @@
+/*GENERAL SETTING*/
+*,
+*:after,
+*:before {
+   box-sizing: border-box;
+}
+.clearfix {
+   &:after {
+      content: "";
+      clear: both;
+      display: block;
+   }
+}
+// body {
+// }
+/*NTRO*/
+.intro {
+   position: relative;
+   .img-holder {
+      height: 891px;
+      overflow: hidden;
+      img {
+         display: block;
+         width: 100%;
+      }
+   }
+   .intro-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 50px;
+      position: absolute;
+      top: 39px;
+      left: 0;
+      width: 100%;
+      ul {
+         display: flex;
+         flex-direction: row;
+         li {
+            margin-right: 64px;
+            &:last-child {
+               margin-right: 0;
+            }
+            a {
+               text-decoration: none;
+               color: $white;
+               cursor: pointer;
+               font-family: $openSans;
+               font-size: 13px;
+               letter-spacing: 1.2px;
+               font-weight: 500;
+               &:hover {
+                  color: $persimmon;
+               }
+            }
+         }
+      }
+   }
+   .slogan {
+      position: absolute;
+      bottom: 145px;
+      left: 0;
+      padding: 0 114px;
+   }
+}
+/*END OF NTRO*/
+/*MAIN*/
+
+/*END OF MAIN*/
