@@ -1,0 +1,60 @@
+@font-face {
+   font-family: "icomoon";
+   src: url("../fonts/icomoon.woff?r5c02k") format("woff");
+   font-weight: normal;
+   font-style: normal;
+   font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+   /* use !important to prevent issues with browser extensions that change fonts */
+   font-family: "icomoon" !important;
+   speak: never;
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+
+   /* Better Font Rendering =========== */
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrowRight:before {
+   content: "\e900";
+   color: #fff;
+}
+.icon-avocado:before {
+   content: "\e901";
+}
+.icon-bag:before {
+   content: "\e902";
+   color: #fff;
+}
+.icon-cloud:before {
+   content: "\e903";
+   color: #fff;
+}
+.icon-drop:before {
+   content: "\e904";
+}
+.icon-speed:before {
+   content: "\e905";
+   color: #fff;
+}
+.icon-strawberry:before {
+   content: "\e906";
+}
+.icon-tag:before {
+   content: "\e907";
+   color: #fff;
+}
+.icon-textsms:before {
+   content: "\e908";
+   color: #fff;
+}
+.icon-user:before {
+   content: "\e909";
+}

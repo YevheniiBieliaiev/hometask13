@@ -40,6 +40,13 @@
       ul {
          display: flex;
          flex-direction: row;
+         @include media("<770px") {
+            flex-direction: column;
+            margin-top: 10px;
+            li {
+               margin-bottom: 15px;
+            }
+         }
          li {
             margin-right: 64px;
             &:last-child {
@@ -65,11 +72,63 @@
       bottom: 145px;
       left: 0;
       padding: 0 114px;
+      @include media("<770px") {
+         display: none;
+      }
    }
 }
 /*END OF NTRO*/
 
 /*MAIN-INFO*/
+/*about*/
+.about {
+   background: $atlantis;
+   padding-top: 170px;
+   padding-bottom: 120px;
+   .about-wrapper {
+      color: $white;
+      display: flex;
+      justify-content: space-between;
+      @include media(">=1181px") {
+         width: 1181px;
+         margin: auto;
+      }
+
+      .about-block {
+         width: 270px;
+         strong {
+            font-family: $openSans;
+            font-size: 24.04px;
+            line-height: 26px;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 32px;
+         }
+         p {
+            font-family: $openSans;
+            font-size: 13.99px;
+            line-height: 27px;
+            font-weight: 400;
+            height: 110px;
+            margin-bottom: 27px;
+         }
+         a {
+            text-decoration: none;
+            color: $white;
+            cursor: pointer;
+            font-family: $openSans;
+            font-size: 14px;
+            font-weight: 400;
+            position: relative;
+            &:hover {
+               text-decoration: underline;
+               color: $persimmon;
+            }
+         }
+      }
+   }
+}
+/*end of about*/
 /*content-green*/
 .data-green {
    background: $white;
@@ -176,24 +235,17 @@
          }
       }
    }
-   @include media(">=768px") {
-      .data-red {
-         &:nth-child(even) {
-         }
-      }
-   }
 }
 .data-red {
    display: flex;
    flex-wrap: wrap;
-   @include media(">=768px") {
+   @include media(">=1180px") {
       flex-wrap: nowrap;
    }
    @include media(">=1181px") {
       width: 1181px;
       margin: auto;
    }
-
    .white-box {
       .white-box-content {
          background: $white;
@@ -275,11 +327,16 @@
       }
    }
    .img-holder {
+      height: 359px;
+      overflow: hidden;
+      @include media(">=1180") {
+         flex: 1;
+      }
       img {
          display: block;
+         width: auto;
       }
    }
 }
-
 /*end of content red*/
 /*END OF MAIN-INFO*/
