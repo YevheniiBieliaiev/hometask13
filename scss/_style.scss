@@ -248,16 +248,16 @@
             }
          }
       }
-      @include media(">=830px") {
+      @include media(">=768px") {
          flex: 1;
       }
    }
-   @include media("<830px") {
+   @include media("<768px") {
       .data-content {
-         width: 100%;
+         flex: 1;
       }
    }
-   @include media(">=830px") {
+   @include media(">=768px") {
       flex-wrap: nowrap;
    }
    @include media(">=1191px") {
@@ -287,7 +287,7 @@
          }
       }
    }
-   @include media(">=830px") {
+   @include media(">=768px") {
       .data-green {
          &:nth-child(even) {
             .data-content {
@@ -303,6 +303,25 @@
 /*end of content green*/
 
 /*content-red*/
+.content-red {
+   @include box($persimmon);
+   .data-red {
+      &:nth-child(even) {
+         .small-img {
+            order: 2;
+         }
+         .large-img {
+            order: 1;
+         }
+         .white-box-content {
+            flex: 1;
+         }
+         .green-box-content {
+            width: 401px;
+         }
+      }
+   }
+}
 .data-red-img {
    display: flex;
    .img-holder {
@@ -336,18 +355,26 @@
          right: 87px;
       }
    }
+   @include media(">=768px") {
+      flex-wrap: nowrap;
+   }
    @include media(">=1191px") {
       width: 1181px;
       margin: auto;
+   }
+   @include media("<768px") {
+      .small-img {
+         display: none;
+      }
    }
 }
 .data-red-content {
    display: flex;
    flex-wrap: wrap;
-   height: 310px;
    .white-box-content {
       background: $white;
-      width: 401px;
+      flex: 1;
+      min-height: 310px;
       position: relative;
       padding: 54px 39px;
       h1 {
@@ -379,6 +406,7 @@
       color: $white;
       position: relative;
       width: 780px;
+      min-height: 310px;
    }
    .large-box {
       padding: 57px 60px;
@@ -421,31 +449,20 @@
          font-weight: 400;
       }
    }
+   @include media("<1181px") {
+      .white-box-content,
+      .green-box-content {
+         flex: 1;
+      }
+   }
+   @include media(">=1181px") {
+      flex-wrap: nowrap;
+   }
    @include media(">=1191px") {
       width: 1181px;
       margin: auto;
    }
 }
-.content-red {
-   @include box($persimmon);
-   .data-red {
-      &:nth-child(even) {
-         .small-img {
-            order: 2;
-         }
-         .large-img {
-            order: 1;
-         }
-         .white-box-content {
-            width: 780px;
-         }
-         .green-box-content {
-            width: 401px;
-         }
-      }
-   }
-}
-
 /*end of content red*/
 /*END OF MAIN-INFO*/
 
