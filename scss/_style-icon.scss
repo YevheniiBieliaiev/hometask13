@@ -35,9 +35,9 @@
    font-size: 38px;
    top: 57px;
    right: 29px;
-   @include media("<992px") {
+   @include media("<1181px") {
       top: 10px;
-      right: 120px;
+      right: 50%;
    }
 }
 .icon-bag:before {
@@ -65,9 +65,9 @@
    top: 56px;
    right: 45px;
    font-size: 38px;
-   @include media("<992px") {
+   @include media("<1181px") {
       top: 10px;
-      right: 120px;
+      right: 50%;
    }
 }
 .icon-tag:after {
@@ -89,8 +89,8 @@
    font-size: 32px;
    top: 56px;
    right: 28px;
-   @include media("<992px") {
+   @include media("<1181px") {
       top: 10px;
-      right: 120px;
+      right: 50%;
    }
 }

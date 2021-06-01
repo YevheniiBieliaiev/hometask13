@@ -452,7 +452,7 @@
    @include media("<1181px") {
       .white-box-content,
       .green-box-content {
-         flex: 1;
+         flex: auto;
       }
    }
    @include media(">=1181px") {
