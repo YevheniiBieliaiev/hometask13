@@ -87,50 +87,77 @@
    .about-wrapper {
       color: $white;
       display: flex;
-      justify-content: space-between;
-      @include media(">=1181px") {
-         width: 1181px;
-         margin: auto;
-      }
-      .about-block {
-         width: 270px;
-         .about-ico {
-            font-size: 43px;
-            display: block;
-            margin-bottom: 24px;
-         }
-         strong {
-            font-family: $openSans;
-            font-size: 24.04px;
-            line-height: 26px;
-            font-weight: 400;
-            display: block;
-            margin-bottom: 20px;
-         }
-         p {
-            font-family: $openSans;
-            font-size: 13.99px;
-            line-height: 25px;
-            font-weight: 400;
-            height: 110px;
-            margin-bottom: 7px;
-         }
-         .more-inf {
-            position: relative;
-            a {
-               text-decoration: none;
-               color: $white;
-               cursor: pointer;
+      justify-content: space-evenly;
+      .delimiter {
+         display: flex;
+         .about-block {
+            width: 270px;
+            margin: 0 10px;
+            .about-ico {
+               font-size: 43px;
+               display: block;
+               margin-bottom: 24px;
+            }
+            strong {
                font-family: $openSans;
-               font-size: 14px;
+               font-size: 24.04px;
+               line-height: 26px;
                font-weight: 400;
-               margin-right: 3px;
-               &:hover {
-                  text-decoration: underline;
+               display: block;
+               margin-bottom: 20px;
+            }
+            p {
+               font-family: $openSans;
+               font-size: 13.99px;
+               line-height: 25px;
+               font-weight: 400;
+               height: 110px;
+               margin-bottom: 7px;
+            }
+            .more-inf {
+               position: relative;
+               a {
+                  text-decoration: none;
+                  color: $white;
+                  cursor: pointer;
+                  font-family: $openSans;
+                  font-size: 14px;
+                  font-weight: 400;
+                  margin-right: 3px;
+                  &:hover {
+                     text-decoration: underline;
+                  }
                }
             }
          }
       }
+      @include media(">=1191px") {
+         width: 1181px;
+         margin: auto;
+         flex-wrap: nowrap;
+      }
+      @include media("<=1190px") {
+         flex-wrap: wrap;
+         align-content: center;
+         .delimiter {
+            margin-bottom: 12px;
+         }
+      }
+      @include media("<650px") {
+         flex-direction: column;
+         align-content: center;
+         .delimiter {
+            flex-direction: column;
+            align-content: center;
+            .about-block {
+               margin-bottom: 20px;
+            }
+         }
+      }
+   }
+   @include media("<=1190px") {
+      padding-top: 30px;
+      padding-bottom: 30px;
    }
 }
 /*end of about*/
@@ -268,14 +295,14 @@
       }
    }
 }
-
 /*end of content green*/
 
 /*content-red*/
 .data-red {
+   // overflow: hidden;
    display: flex;
    flex-wrap: wrap;
-   @include media(">=1180px") {
+   @include media(">=768px") {
       flex-wrap: nowrap;
    }
    @include media(">=1181px") {
@@ -315,6 +342,9 @@
          }
       }
    }
+   // .llb {
+   //    overflow: hidden;
+   // }
    .green-box {
       .green-box-content {
          background: $atlantis;
@@ -368,12 +398,12 @@
       height: 359px;
       overflow: hidden;
       position: relative;
-      @include media(">=1180") {
+      @include media(">=768") {
          flex: 1;
       }
       img {
-         display: block;
          width: auto;
+         display: block;
       }
       .img-holder-content {
          position: absolute;
