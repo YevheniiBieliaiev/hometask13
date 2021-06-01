@@ -166,17 +166,10 @@
    background: $white;
    display: flex;
    flex-wrap: wrap;
-   @include media(">=768px") {
-      flex-wrap: nowrap;
-   }
-   @include media(">=1181px") {
-      width: 1181px;
-      margin: auto;
-   }
    .data-content {
       width: 400px;
       padding-top: 55px;
-      padding: 54px 52px;
+      padding: 55px 52px;
       text-align: center;
       h1 {
          color: $persimmon;
@@ -184,7 +177,7 @@
          font-size: 14px;
          font-weight: 400;
          letter-spacing: 1.5px;
-         margin-bottom: 7px;
+         margin-bottom: 6px;
       }
       strong {
          color: $atlantis;
@@ -193,7 +186,7 @@
          line-height: 37px;
          font-weight: 300;
          display: block;
-         margin-bottom: 20px;
+         margin-bottom: 18px;
       }
       .grey-drop {
          color: $porcelain;
@@ -227,9 +220,6 @@
       height: 394px;
       overflow: hidden;
       position: relative;
-      @include media(">=768px") {
-         flex: 1;
-      }
       img {
          width: auto;
          display: block;
@@ -258,9 +248,24 @@
             }
          }
       }
+      @include media(">=830px") {
+         flex: 1;
+      }
+   }
+   @include media("<830px") {
+      .data-content {
+         width: 100%;
+      }
+   }
+   @include media(">=830px") {
+      flex-wrap: nowrap;
+   }
+   @include media(">=1191px") {
+      width: 1181px;
+      margin: auto;
    }
 }
-.conten-green {
+.content-green {
    @include box($atlantis);
    .data-green {
       &:nth-child(even) {
@@ -282,7 +287,7 @@
          }
       }
    }
-   @include media(">=768px") {
+   @include media(">=830px") {
       .data-green {
          &:nth-child(even) {
             .data-content {
@@ -298,113 +303,18 @@
 /*end of content green*/
 
 /*content-red*/
-.data-red {
-   // overflow: hidden;
+.data-red-img {
    display: flex;
-   flex-wrap: wrap;
-   @include media(">=768px") {
-      flex-wrap: nowrap;
-   }
-   @include media(">=1181px") {
-      width: 1181px;
-      margin: auto;
-   }
-   .white-box {
-      .white-box-content {
-         background: $white;
-         height: 310px;
-         position: relative;
-         .white-box-wrapper {
-            padding: 54px 39px;
-            h1 {
-               color: $persimmon;
-               font-family: $montserrat;
-               font-size: 14px;
-               font-weight: 400;
-               margin-bottom: 6px;
-            }
-            strong {
-               color: $atlantis;
-               font-family: $openSans;
-               font-size: 35px;
-               line-height: 37px;
-               font-weight: 300;
-               display: block;
-               margin-bottom: 29px;
-            }
-            p {
-               color: $nevada;
-               font-family: $openSans;
-               font-size: 14px;
-               line-height: 26px;
-               font-weight: 400;
-            }
-         }
-      }
-   }
-   // .llb {
-   //    overflow: hidden;
-   // }
-   .green-box {
-      .green-box-content {
-         background: $atlantis;
-         height: 310px;
-         color: $white;
-         position: relative;
-      }
-      .large-box {
-         padding: 57px 60px;
-         strong {
-            display: block;
-            font-size: 40px;
-            line-height: 42px;
-            font-family: $openSans;
-            font-weight: 300;
-            margin-bottom: 21px;
-         }
-         p {
-            font-family: $openSans;
-            font-size: 13px;
-            line-height: 20px;
-            font-weight: 400;
-         }
-      }
-      .small-box {
-         padding: 53px 39px;
-         h1 {
-            font-family: $montserrat;
-            font-size: 17px;
-            line-height: 19px;
-            font-weight: 400;
-            margin-bottom: 3px;
-         }
-         strong {
-            font-family: $openSans;
-            font-size: 36px;
-            line-height: 38px;
-            font-weight: 300;
-            display: block;
-            margin-bottom: 27px;
-         }
-         p {
-            font-family: $openSans;
-            font-size: 14px;
-            line-height: 26px;
-            font-weight: 400;
-         }
-      }
-   }
    .img-holder {
       height: 359px;
       overflow: hidden;
       position: relative;
-      @include media(">=768") {
-         flex: 1;
-      }
       img {
-         width: auto;
          display: block;
+         width: auto;
       }
+   }
+   .large-img {
       .img-holder-content {
          position: absolute;
          top: 60px;
@@ -417,29 +327,127 @@
             letter-spacing: 1.2px;
             word-spacing: 1px;
             position: relative;
-            margin-right: 10px;
          }
       }
       .left-text {
-         left: 59px;
+         left: 61px;
       }
       .right-text {
-         right: 78px;
+         right: 87px;
       }
    }
+   @include media(">=1191px") {
+      width: 1181px;
+      margin: auto;
+   }
 }
-.conten-red {
+.data-red-content {
+   display: flex;
+   flex-wrap: wrap;
+   height: 310px;
+   .white-box-content {
+      background: $white;
+      width: 401px;
+      position: relative;
+      padding: 54px 39px;
+      h1 {
+         color: $persimmon;
+         font-family: $montserrat;
+         font-size: 14px;
+         font-weight: 400;
+         margin-bottom: 6px;
+      }
+      strong {
+         color: $atlantis;
+         font-family: $openSans;
+         font-size: 35px;
+         line-height: 37px;
+         font-weight: 300;
+         display: block;
+         margin-bottom: 29px;
+      }
+      p {
+         color: $nevada;
+         font-family: $openSans;
+         font-size: 14px;
+         line-height: 26px;
+         font-weight: 400;
+      }
+   }
+   .green-box-content {
+      background: $atlantis;
+      color: $white;
+      position: relative;
+      width: 780px;
+   }
+   .large-box {
+      padding: 57px 60px;
+      strong {
+         display: block;
+         font-size: 40px;
+         line-height: 42px;
+         font-family: $openSans;
+         font-weight: 300;
+         margin-bottom: 21px;
+      }
+      p {
+         font-family: $openSans;
+         font-size: 13px;
+         line-height: 20px;
+         font-weight: 400;
+      }
+   }
+   .small-box {
+      padding: 53px 52px 0 39px;
+      h1 {
+         font-family: $montserrat;
+         font-size: 17px;
+         line-height: 19px;
+         font-weight: 400;
+         margin-bottom: 3px;
+      }
+      strong {
+         font-family: $openSans;
+         font-size: 36px;
+         line-height: 38px;
+         font-weight: 300;
+         display: block;
+         margin-bottom: 27px;
+      }
+      p {
+         font-family: $openSans;
+         font-size: 14px;
+         line-height: 26px;
+         font-weight: 400;
+      }
+   }
+   @include media(">=1191px") {
+      width: 1181px;
+      margin: auto;
+   }
+}
+.content-red {
    @include box($persimmon);
    .data-red {
       &:nth-child(even) {
-         .white-box {
+         .small-img {
+            order: 2;
+         }
+         .large-img {
             order: 1;
          }
-         .green-box {
-            order: 2;
+         .white-box-content {
+            width: 780px;
+         }
+         .green-box-content {
+            width: 401px;
          }
       }
    }
 }
+
 /*end of content red*/
 /*END OF MAIN-INFO*/
+
+/*FOOTER*/
+/*END OF FOOTER*/
