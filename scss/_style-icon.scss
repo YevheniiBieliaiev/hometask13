@@ -1,6 +1,6 @@
 @font-face {
    font-family: "icomoon";
-   src: url("../fonts/icomoon.woff?r5c02k") format("woff");
+   src: url("../fonts/icomoon.woff?d65kp0") format("woff");
    font-weight: normal;
    font-style: normal;
    font-display: block;
@@ -22,12 +22,19 @@
    -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrowRight:before {
+.icon-arrow-right:after {
    content: "\e900";
-   color: #fff;
+   pointer-events: none;
+   position: absolute;
+   top: 2px;
+   font-size: 18px;
 }
 .icon-avocado:before {
    content: "\e901";
+   position: absolute;
+   font-size: 38px;
+   top: 57px;
+   right: 29px;
 }
 .icon-bag:before {
    content: "\e902";
@@ -40,16 +47,27 @@
 .icon-drop:before {
    content: "\e904";
 }
+.icon-drop-red:after {
+   content: "\e904";
+}
 .icon-speed:before {
    content: "\e905";
    color: #fff;
 }
 .icon-strawberry:before {
    content: "\e906";
+   position: absolute;
+   color: $porcelain;
+   top: 56px;
+   right: 45px;
+   font-size: 38px;
 }
-.icon-tag:before {
+.icon-tag:after {
    content: "\e907";
+   position: absolute;
    color: #fff;
+   font-size: 22px;
+   top: -2px;
 }
 .icon-textsms:before {
    content: "\e908";
@@ -57,4 +75,9 @@
 }
 .icon-user:before {
    content: "\e909";
+   position: absolute;
+   color: $porcelainUser;
+   font-size: 32px;
+   top: 56px;
+   right: 28px;
 }

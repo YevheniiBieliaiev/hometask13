@@ -11,7 +11,6 @@
       display: block;
    }
 }
-
 /*NTRO*/
 .intro {
    position: relative;
@@ -83,8 +82,8 @@
 /*about*/
 .about {
    background: $atlantis;
-   padding-top: 170px;
-   padding-bottom: 120px;
+   padding-top: 104px;
+   padding-bottom: 119px;
    .about-wrapper {
       color: $white;
       display: flex;
@@ -93,36 +92,42 @@
          width: 1181px;
          margin: auto;
       }
-
       .about-block {
          width: 270px;
+         .about-ico {
+            font-size: 43px;
+            display: block;
+            margin-bottom: 24px;
+         }
          strong {
             font-family: $openSans;
             font-size: 24.04px;
             line-height: 26px;
             font-weight: 400;
             display: block;
-            margin-bottom: 32px;
+            margin-bottom: 20px;
          }
          p {
             font-family: $openSans;
             font-size: 13.99px;
-            line-height: 27px;
+            line-height: 25px;
             font-weight: 400;
             height: 110px;
-            margin-bottom: 27px;
+            margin-bottom: 7px;
          }
-         a {
-            text-decoration: none;
-            color: $white;
-            cursor: pointer;
-            font-family: $openSans;
-            font-size: 14px;
-            font-weight: 400;
+         .more-inf {
             position: relative;
-            &:hover {
-               text-decoration: underline;
-               color: $persimmon;
+            a {
+               text-decoration: none;
+               color: $white;
+               cursor: pointer;
+               font-family: $openSans;
+               font-size: 14px;
+               font-weight: 400;
+               margin-right: 3px;
+               &:hover {
+                  text-decoration: underline;
+               }
             }
          }
       }
@@ -144,16 +149,15 @@
    .data-content {
       width: 400px;
       padding-top: 55px;
-      padding: 55px 52px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
+      padding: 54px 52px;
+      text-align: center;
       h1 {
          color: $persimmon;
          font-family: $montserrat;
          font-size: 14px;
          font-weight: 400;
+         letter-spacing: 1.5px;
+         margin-bottom: 7px;
       }
       strong {
          color: $atlantis;
@@ -161,14 +165,23 @@
          font-size: 35px;
          line-height: 37px;
          font-weight: 300;
+         display: block;
+         margin-bottom: 20px;
+      }
+      .grey-drop {
+         color: $porcelain;
+         font-size: 23px;
+         display: block;
+         margin-bottom: 16.5px;
       }
       p {
          color: $nevada;
          font-family: $openSans;
          font-size: 14px;
-         line-height: 26px;
+         line-height: 27px;
          font-weight: 400;
          text-align: center;
+         margin-bottom: 5px;
       }
       a {
          color: $atlantis;
@@ -186,12 +199,37 @@
    .data-img {
       height: 394px;
       overflow: hidden;
+      position: relative;
       @include media(">=768px") {
          flex: 1;
       }
       img {
          width: auto;
          display: block;
+      }
+      .data-img-content {
+         position: absolute;
+         bottom: 51px;
+         font-size: 12px;
+         color: $white;
+         .red-drop {
+            position: absolute;
+            color: $persimmon;
+            font-size: 32px;
+            font-weight: 600;
+            top: -12px;
+         }
+         .img-text {
+            font-family: $openSans;
+            font-weight: 400;
+            margin-right: 12px;
+         }
+         .red-text {
+            color: $carnation;
+            em {
+               color: $white;
+            }
+         }
       }
    }
 }
@@ -204,6 +242,16 @@
          }
          .data-img {
             order: 2;
+            .data-img-content {
+               left: 48px;
+            }
+         }
+      }
+      &:nth-child(odd) {
+         .data-img {
+            .data-img-content {
+               right: 63px;
+            }
          }
       }
    }
@@ -220,22 +268,10 @@
       }
    }
 }
+
 /*end of content green*/
 
 /*content-red*/
-.conten-red {
-   @include box($persimmon);
-   .data-red {
-      &:nth-child(even) {
-         .white-box {
-            order: 1;
-         }
-         .green-box {
-            order: 2;
-         }
-      }
-   }
-}
 .data-red {
    display: flex;
    flex-wrap: wrap;
@@ -250,6 +286,7 @@
       .white-box-content {
          background: $white;
          height: 310px;
+         position: relative;
          .white-box-wrapper {
             padding: 54px 39px;
             h1 {
@@ -283,6 +320,7 @@
          background: $atlantis;
          height: 310px;
          color: $white;
+         position: relative;
       }
       .large-box {
          padding: 57px 60px;
@@ -329,12 +367,47 @@
    .img-holder {
       height: 359px;
       overflow: hidden;
+      position: relative;
       @include media(">=1180") {
          flex: 1;
       }
       img {
          display: block;
          width: auto;
+      }
+      .img-holder-content {
+         position: absolute;
+         top: 60px;
+         .holder-text {
+            color: $white;
+            font-family: $montserrat;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 400;
+            letter-spacing: 1.2px;
+            word-spacing: 1px;
+            position: relative;
+            margin-right: 10px;
+         }
+      }
+      .left-text {
+         left: 59px;
+      }
+      .right-text {
+         right: 78px;
+      }
+   }
+}
+.conten-red {
+   @include box($persimmon);
+   .data-red {
+      &:nth-child(even) {
+         .white-box {
+            order: 1;
+         }
+         .green-box {
+            order: 2;
+         }
       }
    }
 }
