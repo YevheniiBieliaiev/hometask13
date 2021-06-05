@@ -11,7 +11,7 @@
       display: block;
    }
 }
-/*NTRO*/
+/*INTRO*/
 .intro {
    position: relative;
    .img-holder {
@@ -76,7 +76,7 @@
       }
    }
 }
-/*END OF NTRO*/
+/*END OF INTRO*/
 
 /*MAIN-INFO*/
 /*about*/
@@ -132,7 +132,7 @@
          }
       }
       @include media(">=1191px") {
-         width: 1181px;
+         max-width: 1181px;
          margin: auto;
          flex-wrap: nowrap;
       }
@@ -141,6 +141,9 @@
          align-content: center;
          .delimiter {
             margin-bottom: 12px;
+            .about-block {
+               margin-bottom: 40px;
+            }
          }
       }
       @include media("<650px") {
@@ -150,12 +153,12 @@
             flex-direction: column;
             align-content: center;
             .about-block {
-               margin-bottom: 20px;
+               margin-bottom: 40px;
             }
          }
       }
    }
-   @include media("<=1190px") {
+   @include media("<=1191px") {
       padding-top: 30px;
       padding-bottom: 30px;
    }
@@ -261,7 +264,7 @@
       flex-wrap: nowrap;
    }
    @include media(">=1191px") {
-      width: 1181px;
+      max-width: 1181px;
       margin: auto;
    }
 }
@@ -319,13 +322,23 @@
          .green-box-content {
             width: 401px;
          }
+         @include media("<768px") {
+            .data-red-img {
+               flex-direction: column;
+               .mango {
+                  padding-top: 20px;
+                  margin: auto;
+               }
+            }
+         }
       }
    }
 }
 .data-red-img {
    display: flex;
+   @include box($white);
    .img-holder {
-      height: 359px;
+      max-height: 359px;
       overflow: hidden;
       position: relative;
       img {
@@ -355,17 +368,17 @@
          right: 87px;
       }
    }
+   @include media("<768px") {
+      .lifestyle {
+         display: none;
+      }
+   }
    @include media(">=768px") {
       flex-wrap: nowrap;
    }
    @include media(">=1191px") {
-      width: 1181px;
+      max-width: 1181px;
       margin: auto;
-   }
-   @include media("<768px") {
-      .small-img {
-         display: none;
-      }
    }
 }
 .data-red-content {
@@ -459,7 +472,7 @@
       flex-wrap: nowrap;
    }
    @include media(">=1191px") {
-      width: 1181px;
+      max-width: 1181px;
       margin: auto;
    }
 }
